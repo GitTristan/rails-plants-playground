@@ -1,0 +1,17 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to 'Edit', edit_plant_recipe_path(@plant, @recipe), class: 'btn btn-success' %>
+    <%= link_to 'Delete', plant_recipe_path(@plant, @recipe), method: :delete, class: 'btn btn-danger' %>
+  </div>
+  <h1><%= @plant.common_name %></h1>
+</div>
+
+<h3><i><%= @recipe.recipe_name %></i></h3>
+<ul>
+  <li><%= @recipe.part %></li>
+  <li><%= @recipe.recipe_purpose %></li>
+  <li><%= @recipe.ingredients %></li>
+  <li><%= @recipe.prep_time %></li>
+  <li><%= @recipe.total_time %></li>
+  <li><%= @recipe.directions %></li>
+</ul>
