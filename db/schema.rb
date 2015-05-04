@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422031539) do
+ActiveRecord::Schema.define(version: 20150504212043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 20150422031539) do
     t.string   "genus_species", null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "recipe_name"
+    t.string   "part"
+    t.string   "recipe_purpose"
+    t.string   "ingredients"
+    t.string   "prep_time"
+    t.string   "total_time"
+    t.string   "directions"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
