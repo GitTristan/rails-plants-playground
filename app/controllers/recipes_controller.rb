@@ -16,12 +16,34 @@ class RecipesController < ApplicationController
     end
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(task_params)
+      flash[:success] = "Recipe was successfully updated"
+      redirect_to plant_recipe_path(@plant, @recipe)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    recipe = Recipe.find(params[:id])
+    recipe.destroy
+    redirect_to plant_recipe_path
+  end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:recipe_name, :part, :recipe_purpose, :ingredients,
+    params.require(:recipe).permit(:recipe_name, :part, :recipe_purpose, :ingredients, 
     :prep_time, :total_time, :directions)
   end
 

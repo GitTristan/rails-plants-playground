@@ -14,7 +14,7 @@
   <div class="form-group">
     <%= f.label :recipe_purpose, class: 'col-md-2 control-label' %>
     <div class='col-md-6'>
-      <%= f.collection_select() %>
+      <%= f.collection_select(:recipe_purpose, [], :id, :, {prompt: "please select a purpose..."},{class: 'form-control'}) %>
     </div>
   </div>
   <div class="form-group">
