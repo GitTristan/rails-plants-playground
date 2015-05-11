@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'Recipes' do
   scenario 'User can CRUD plant recipes' do
+<<<<<<< HEAD
+=======
+    pending 'This spec goes with Nesting and Active Record Associations (one to many, README #3)'
+>>>>>>> 7e028b56676a979ac113bce32582dff018bd9aa6
     plant = create_plant(
       :common_name   => 'Dandylion',
       :genus_species => 'Taraxacum officianale',
